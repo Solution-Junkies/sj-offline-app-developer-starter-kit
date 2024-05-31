@@ -1,0 +1,52 @@
+<template>
+    <div class="component-background">
+    <lightning-record-edit-form object-api-name="animalshelters__Animal__c" record-id={recordId} onsuccess={onSuccess} onsubmit={submit}>
+            <div class="card-container">         
+                <div class="title-slot">
+                    <lightning-layout horizontal-align="spread" class="slds-var-p-horizontal_xx-small">
+                        <lightning-layout-item>
+                            <lightning-button variant="base" data-id="cancel" label="Cancel" type="button" onclick={dismiss}
+                                class="button"></lightning-button>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item data-id="name" class="record-name slds-align_absolute-center">
+                            <p style="word-break: break-all;">{name}</p>
+                        </lightning-layout-item>
+    
+                        <lightning-layout-item>
+                            <lightning-button variant="base" data-id="submit" label="Save" type="submit"
+                                class="button-primary"></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+
+                <div class="body-slot">
+                 <div class="header-offset slds-var-p-horizontal_small slds-var-p-bottom_medium">
+
+                        <!-- show any error messages or alerts -->
+                        <lightning-messages></lightning-messages>
+        
+                        <!-- input fields -->
+                        <lightning-input-field field-name={animalName}></lightning-input-field>
+                        <lightning-input-field field-name={animalBreed}></lightning-input-field>
+                        <lightning-input-field field-name={animalDOA}></lightning-input-field>
+                        <lightning-input-field field-name={animalStatusReason}></lightning-input-field>
+                        <lightning-input-field field-name={animalStatus}></lightning-input-field>
+                        <lightning-input-field field-name={animalDOB}></lightning-input-field>
+                       <!-- <lightning-record-picker
+                            label="Entry Account"
+                            placeholder="Search Accounts..."
+                            object-api-name="Account"
+                            value={initialValue}
+                            onchange={handleChange}
+                            >
+                         </lightning-record-picker>-->
+                    </div>
+                </div>
+
+                <!-- show any draft information for this record fields={fields}-->
+                <!-- <c-draft-details-list record-id={recordId} fields={fields}></c-draft-details-list> -->
+            </div>
+        </lightning-record-edit-form>
+    </div>
+</template>

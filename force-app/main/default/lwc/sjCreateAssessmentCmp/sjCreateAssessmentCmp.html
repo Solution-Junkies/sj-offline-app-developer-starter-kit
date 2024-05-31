@@ -1,0 +1,47 @@
+<template>
+    <div class="component-background">
+        <lightning-record-edit-form object-api-name="animalshelters__Assessment__c" onsuccess={onSuccess} onerror={onError} onsubmit={onSubmit}>
+
+            <!-- cancel and submit buttons-->
+            <lightning-layout horizontal-align="spread" class="slds-var-p-horizontal_xx-small">
+                <lightning-layout-item>
+                    <lightning-button variant="base" data-id="cancel" label="Cancel" type="button" onclick={dismiss}
+                        class="button"></lightning-button>
+                </lightning-layout-item>
+
+                <lightning-layout-item>
+                    <lightning-button variant="base" data-id="submit" label="Create" type="submit"
+                        class="button-primary"></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+
+            <!-- show any error messages or alerts -->
+            <lightning-messages></lightning-messages>
+
+            <!-- input fields -->
+            <!-- <lightning-input-field field-name={animalField} value={initialValue}></lightning-input-field> -->
+            <lightning-input-field field-name={typeField} value={initialValue}></lightning-input-field>
+            <lightning-input-field field-name={dateField} value={initialValue}></lightning-input-field>
+            <lightning-input-field field-name={commentsField} value={initialValue}></lightning-input-field>
+            <lightning-input-field field-name={weightField} value={initialValue}></lightning-input-field>
+
+            <!-- 
+            The lookup field allows user to search for a list of animals. 
+            lightning-record-picker is a Beta Service in Winter'24 release. It is targeted to be GA in the coming releases.
+            https://help.salesforce.com/s/articleView?id=release-notes.rn_lwc_components.htm&release=246&type=5
+            -->
+            <lightning-record-picker
+                label="Animal"
+                placeholder="Search Animals..."
+                object-api-name="animalshelters__Animal__c"
+                value={initialValue}
+                onchange={handleChange}
+            >
+            </lightning-record-picker>
+
+        </lightning-record-edit-form>
+    </div>
+</template>
+
+

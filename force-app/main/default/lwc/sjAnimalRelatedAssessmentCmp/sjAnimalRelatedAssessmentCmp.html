@@ -1,0 +1,49 @@
+<template>
+    TEST! {assessments}
+    <template if:true={assessments}>
+        <article class="slds-card slds-var-m-around_small">
+            <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="account">
+                        <lightning-icon icon-name="standard:contact" alternative-text="Assessment" title="Assessment"></lightning-icon>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                <h2 class="slds-card__header-title slds-truncate">
+                    <span>Assessments</span>
+                </h2>
+                </div>
+            </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <ul class="slds-has-dividers_around-space">
+                    <template for:each={assessments} for:item="assessment">
+                        <li key={assessment.Id} class="slds-item" onclick={assessmentClick} data-id={assessment.Id}>
+                            <article  class="slds-tile slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container" title="description of icon when needed">
+                                        <lightning-icon icon-name="standard:contact" alternative-text="Animal" title="Animal"></lightning-icon>
+                                    </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                    <h3 class="slds-truncate" title={assessment.Name.value}>
+                                        {assessment.Name.value}
+                                    </h3>
+                                    <div class="slds-tile__detail">
+                                        <dl class="slds-list_horizontal slds-wrap">
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Phone">Type:</dt>
+                                        <dd class="slds-item_detail slds-truncate" title={assessment.Phone.value}>{assessment.animalshelters__Assessment_Type__c.value}</dd>
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Email">Name:</dt>
+                                        <dd class="slds-item_detail slds-truncate" title={assessment.Email.value}>{assessment.Name.value}</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </article>
+    </template>
+</template>
