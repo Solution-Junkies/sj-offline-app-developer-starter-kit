@@ -1,5 +1,4 @@
 <template>
-    TEST! {assessments}
     <template if:true={assessments}>
         <article class="slds-card slds-var-m-around_small">
             <div class="slds-card__header slds-grid">
@@ -11,7 +10,7 @@
                 </div>
                 <div class="slds-media__body">
                 <h2 class="slds-card__header-title slds-truncate">
-                    <span>Assessments</span>
+                    <span>Assessments ({totalCount})</span>
                 </h2>
                 </div>
             </header>
@@ -32,10 +31,10 @@
                                     </h3>
                                     <div class="slds-tile__detail">
                                         <dl class="slds-list_horizontal slds-wrap">
-                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Phone">Type:</dt>
-                                        <dd class="slds-item_detail slds-truncate" title={assessment.Phone.value}>{assessment.animalshelters__Assessment_Type__c.value}</dd>
-                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Email">Name:</dt>
-                                        <dd class="slds-item_detail slds-truncate" title={assessment.Email.value}>{assessment.Name.value}</dd>
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Type">Type:</dt>
+                                        <dd class="slds-item_detail slds-truncate" title={assessment.animalshelters__Assessment_Type__c.value}>{assessment.animalshelters__Assessment_Type__c.value}</dd>
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name:</dt>
+                                        <dd class="slds-item_detail slds-truncate" title={assessment.Name.value}>{assessment.Name.value}</dd>
                                         </dl>
                                     </div>
                                 </div>
@@ -45,5 +44,5 @@
                 </ul>
             </div>
         </article>
-    </template>
+    </template> 
 </template>
