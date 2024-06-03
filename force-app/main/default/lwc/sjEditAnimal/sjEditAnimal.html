@@ -20,30 +20,24 @@
                     </lightning-layout>
                 </div>
 
-                <div class="body-slot">
-                 <div class="header-offset slds-var-p-horizontal_small slds-var-p-bottom_medium">
-
-                        <!-- show any error messages or alerts -->
+                 <!-- show any error messages or alerts -->
                         <lightning-messages></lightning-messages>
         
                         <!-- input fields -->
                         <lightning-input-field field-name={animalName}></lightning-input-field>
-                        <lightning-input-field field-name={animalBreed}></lightning-input-field>
+                        <!-- <lightning-input-field field-name={animalBreed}></lightning-input-field> -->
                         <lightning-input-field field-name={animalDOA}></lightning-input-field>
                         <lightning-input-field field-name={animalStatusReason}></lightning-input-field>
                         <lightning-input-field field-name={animalStatus}></lightning-input-field>
                         <lightning-input-field field-name={animalDOB}></lightning-input-field>
-                       <!-- <lightning-record-picker
-                            label="Entry Account"
-                            placeholder="Search Accounts..."
-                            object-api-name="Account"
+                        <lightning-record-picker
+                            label="Breed"
+                            placeholder="Search Breed..."
+                            object-api-name="animalshelters__Breed__c"
                             value={initialValue}
                             onchange={handleChange}
                             >
-                         </lightning-record-picker>-->
-                    </div>
-                </div>
-
+                         </lightning-record-picker>
                 <!-- show any draft information for this record fields={fields}-->
                 <!-- <c-draft-details-list record-id={recordId} fields={fields}></c-draft-details-list> -->
             </div>
